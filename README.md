@@ -1,36 +1,33 @@
 # CS-429-IR-Project
 
 ## Abstract
-This project aims to develop a web-based search engine using Flask and Python to demonstrate the application of information retrieval techniques with an inverted index. The objective was to build an efficient and scalable system for searching text documents. Future work may involve enhancing the user interface, improving the ranking algorithms, and expanding the document corpus.
+This project involves the development of an information retrieval system constructed using Python. The system includes a web crawler built with Scrapy, an indexer using scikit-learn for creating an inverted index with TF-IDF scoring, and a query processor implemented in Flask to handle real-time queries and return the top-k ranked results. The objective is to provide a fully functional retrieval system that can process and respond to user queries efficiently. Future enhancements may include implementing advanced features like semantic search and automated query correction.
 
 ## Overview
-The solution implements a Flask web application that allows users to search for text documents. The system employs natural language processing and machine learning techniques to process and rank documents based on relevance to the search query. Key literature and systems studied include the book "Introduction to Information Retrieval" by Manning et al., which served as a foundation for the implemented algorithms.
+The proposed system is designed to crawl, index, and process queries on HTML documents retrieved from specified URLs. The project integrates technologies like Scrapy for web crawling, scikit-learn for indexing documents, and Flask for processing queries. This system is primarily aimed at educational purposes to demonstrate the capabilities of a basic search engine.
 
 ## Design
 ### System Capabilities
-- Text search with relevance ranking
-- Interactive web interface
-- Real-time query processing
+- Crawling web pages up to a specified depth and number of pages.
+- Indexing the content of these pages using a vector space model with TF-IDF weighting.
+- Processing incoming queries through a Flask-based web interface, validating them, and returning the top-k results based on cosine similarity.
 ### Interactions
 - Users input queries through a web form.
 - The system processes these queries and displays ranked results.
 ### Integration
 - Integrates Python libraries such as NLTK and scikit-learn for text processing and vector space modeling.
 ## Architecture
-### Software Components
-- 'Flask' for the web server.
-- 'nltk' for text processing.
-- 'scikit-learn' for implementing TF-IDF vectorization.
-### Interfaces
-- Web-based user interface accessible via browser.
-- RESTful API endpoints for search functionality.
-### Implementation
-- Python scripts handle backend logic.
-- HTML and CSS for front-end presentation.
+**Crawler**: Utilizes Scrapy to fetch HTML documents based on a given seed URL, maximum pages, and depth.
+**Indexer**: Built with scikit-learn, it creates an inverted index that stores documents and their TF-IDF scores.
+**Processor**: A Flask application that accepts queries in JSON format, processes them against the indexed data, and returns ranked results.
 ## Operation
 ### Software Commands
 - 'flask run': Starts the server.
 - Environment variables set up for development or production modes.
+- Running Components:
+  1. Crawler: ``` scrapy crawl PokeCrawler.py ```
+  2. Indexer: ``` python build_index.py ```
+  3. Processor: ``` python mainpro.py ```
 ### Inputs
 - User enters text queries through the web interface.
 ### Installation
@@ -57,7 +54,7 @@ The system successfully implements a basic search engine with document ranking. 
 - "Flask Documentation" (2024). Flask. https://flask.palletsprojects.com/
 - "Scikit-learn: Machine Learning in Python," Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
 - OpenAI. "ChatGPT: Optimizing Language Models for Dialogue." OpenAI Blog. https://www.openai.com/chatgpt
-
+- Wikipedia contributors. "Pokémon." Wikipedia, The Free Encyclopedia. https://en.wikipedia.org/wiki/Pok%C3%A9mon
 ## Brief Instructions
 
 ### Software Commands
